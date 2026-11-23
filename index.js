@@ -21,14 +21,15 @@ bot.on("message",async msg=>{
  const first=parts[0].split("@")[0].replace(/^\/+/,"").toLowerCase();
  const args=parts.slice(1);
  const commandName=loader.aliases.get(first)||first;
- const cmd=loader.commands.get(commandName);
+ let cmd=loader.commands.get(commandName);
+ if(!cmd&&text.startsWith("/"))cmd=loader.commands.get("unknown");
  if(!cmd)return;
  const id=String(msg.from.id);
  try{
   const u=await db.getUser(msg.from);
   if(u.banned&&!db.isAdmin(msg.from)){bot.sendText(msg.chat.id,"Your account is restricted from using the bot.");return;}
   const isAdmin=db.isAdmin(msg.from);
-  await cmd.run({id,u,args,bot,msg,isAdmin,loader,chatId:msg.chat.id,replyTarget:msg.reply_to_message?.from});
+  await cmd.run({id,u,args:cmd.meta.name==="unknown"?[first,...args]:args,bot,msg,isAdmin,loader,chatId:msg.chat.id,replyTarget:msg.reply_to_message?.from,db});
  }catch(e){
   console.error("Command error:",e);
   bot.sendText(msg.chat.id,"Command error: "+e.message,{reply_to_message_id:msg.message_id});
