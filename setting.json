@@ -1,0 +1,6 @@
+{
+  "token": "YOUR_TELEGRAM_BOT_TOKEN",
+  "admins": ["YOUR_TELEGRAM_ID", "yourusername"],
+  "mongoUri": "YOUR_MONGODB_ATLAS_URI",
+  "mongoDatabase": "telebot"
+}
