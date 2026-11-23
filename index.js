@@ -35,5 +35,5 @@ bot.on("message",async msg=>{
   bot.sendText(msg.chat.id,"Command error: "+e.message,{reply_to_message_id:msg.message_id});
  }
 });
-require("./handlers/web")(db);
+require("./handlers/web")(db,bot);
 db.connect().then(()=>console.log("Telegram bot online")).catch(e=>console.error("MongoDB connection failed:",e));
