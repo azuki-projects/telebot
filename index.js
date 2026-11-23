@@ -22,7 +22,6 @@ bot.on("message",async msg=>{
  const args=parts.slice(1);
  const commandName=loader.aliases.get(first)||first;
  let cmd=loader.commands.get(commandName);
- if(!cmd&&text.startsWith("/"))cmd=loader.commands.get("unknown");
  if(!cmd)return;
  const id=String(msg.from.id);
  try{
