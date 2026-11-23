@@ -1,1 +1,0 @@
-module.exports={meta:{name:"unknown",aliases:[],description:"Unknown command fallback",usage:"",category:"Info"},async run({chatId,args,bot}){bot.sendText(chatId,"Unknown command: <code>"+String(args[0]||"").replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]))+"</code>\nUse /help to see available commands.",{parse_mode:"HTML"})}};
