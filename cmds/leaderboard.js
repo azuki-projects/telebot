@@ -38,7 +38,8 @@ module.exports={
     else pets.forEach((u,i)=>{
       const p=u.pet;
       strongest.push(rank(i+1)+" "+(p.emoji||"🐾")+" "+p.name+" — "+label(u));
-      strongest.push("   ⚔️ Strength: "+(p.strength||0)+" | Lv."+ (p.level||1)+" | 🛡️ "+(p.shield||0)+" | 🏆 "+(p.wins||0)+" wins");
+      strongest.push("   ⚔️ Strength: "+(p.strength||0)+" | Lv."+ (p.level||1)+" | ❤️ Health: "+(p.health||0)+"/"+(p.maxHealth||0));
+      strongest.push("   🛡️ Shield: "+(p.shield||0)+" | 🏆 Wins: "+(p.wins||0)+" | ❌ Losses: "+(p.losses||0));
     });
 
     await bot.sendText(chatId,wealth.join("\n"),{reply_to_message_id:msg.message_id});
