@@ -22,6 +22,7 @@ bot.on("message",async msg=>{
  const args=parts.slice(1);
  const commandName=loader.aliases.get(first)||first;
  let cmd=loader.commands.get(commandName);
+ if(!cmd&&text.startsWith("/"))cmd={meta:{name:"unknown"},run:({chatId,args,bot})=>bot.sendText(chatId,"Unknown command: <code>"+String(args[0]||"").replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]))+"</code>\\nUse /help to see available commands.",{parse_mode:"HTML"})};
  if(!cmd)return;
  const id=String(msg.from.id);
  try{
