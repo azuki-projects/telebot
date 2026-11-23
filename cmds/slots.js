@@ -11,8 +11,29 @@ module.exports={
   },
   async run({chatId,u,args,msg,bot}){
     const bet=eco.parseAmount(args[0]);
-    if(!Number.isFinite(bet)||bet<=0||bet>u.money)
-      return bot.sendText(chatId,"Usage: /slots <bet> (your balance: "+eco.fmt(u.money)+")");
+
+    if(!args[0]||!Number.isFinite(bet)||bet<=0){
+      return bot.sendText(chatId,
+        "❌ INVALID BET\n\n"+
+        "Usage: /slots <amount>\n"+
+        "Example: /slots 5M\n\n"+
+        "Your balance: "+eco.fmt(u.money),
+        {reply_to_message_id:msg.message_id}
+      );
+    }
+
+    if(bet>u.money){
+      const shortfall=bet-u.money;
+      return bot.sendText(chatId,
+        "❌ INSUFFICIENT BALANCE\n\n"+
+        "You don't have enough coins to place this bet.\n\n"+
+        "🎰 Bet amount: "+eco.fmt(bet)+"\n"+
+        "💰 Your balance: "+eco.fmt(u.money)+"\n"+
+        "📉 You need: "+eco.fmt(shortfall)+" more\n\n"+
+        "Lower your bet or earn more coins before playing.",
+        {reply_to_message_id:msg.message_id}
+      );
+    }
 
     const s=Array.from({length:5},()=>symbols[Math.floor(Math.random()*symbols.length)]);
     const counts={};
