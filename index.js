@@ -28,7 +28,7 @@ bot.on("message",async msg=>{
   const u=await db.getUser(msg.from);
   if(u.banned&&!db.isAdmin(msg.from)){const notice="⛔ You have been banned from using the bot. If you think this is a mistake please PM @itzdiablodan";try{await bot.sendText(id,notice)}catch(e){if(isPrivate)bot.sendText(msg.chat.id,notice);else bot.sendText(msg.chat.id,"This account is banned.")}return;}
   const isAdmin=db.isAdmin(msg.from);
-  await cmd.run({id,u,args:cmd.meta.name==="unknown"?[first,...args]:args,bot,msg,isAdmin,loader,chatId:msg.chat.id,replyTarget:msg.reply_to_message?.from,db});
+  await cmd.run({id,u,args,bot,msg,isAdmin,loader,chatId:msg.chat.id,replyTarget:msg.reply_to_message?.from,db});
  }catch(e){
   console.error("Command error:",e);
   bot.sendText(msg.chat.id,"Command error: "+e.message,{reply_to_message_id:msg.message_id});
