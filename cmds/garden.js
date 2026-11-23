@@ -8,7 +8,8 @@ const sprinklers={
  mythical:{name:"Mythical Sprinkler",price:10000000000,duration:3600,speed:5,weight:1}
 };
 const mutations={shiny:{name:"Shiny",emoji:"✨",multiplier:2,price:10000},golden:{name:"Golden",emoji:"🌟",multiplier:5,price:1000000},rainbow:{name:"Rainbow",emoji:"🌈",multiplier:25,price:100000000},celestial:{name:"Celestial",emoji:"💫",multiplier:1000,price:10000000000}};
-const fmt=eco.fmt,now=()=>Date.now(),MAX_SPRINKLERS=5;\nfunction price(v){return typeof v==="number"?v:eco.parseAmount(v)}
+const fmt=eco.fmt,now=()=>Date.now(),MAX_SPRINKLERS=5;
+function price(v){return typeof v==="number"?v:eco.parseAmount(v)}
 function init(u){if(!u.garden)u.garden={slots:5,slotUpgrade:0,inventoryCapacity:10,inventoryUpgrade:0,seeds:{},planted:[],inventory:[],activeSprinklers:[],sprinklerItems:{},mutationItems:{}};const g=u.garden;g.slots=g.slots||5;g.inventoryCapacity=g.inventoryCapacity||10;g.seeds=g.seeds||{};g.planted=g.planted||[];g.inventory=g.inventory||[];g.activeSprinklers=g.activeSprinklers||[];g.sprinklerItems=g.sprinklerItems||{};g.mutationItems=g.mutationItems||{};g.slotUpgrade=g.slotUpgrade||0;g.inventoryUpgrade=g.inventoryUpgrade||0;return g}
 function active(g){g.activeSprinklers=g.activeSprinklers.filter(s=>s.expiresAt>now());return g.activeSprinklers}
 function boost(g){const a=active(g);return{speed:Math.min(10,1+a.reduce((n,s)=>n+(sprinklers[s.type]?.speed-1||0),0)),weight:a.reduce((n,s)=>n+(sprinklers[s.type]?.weight||0),0)}}
