@@ -1,0 +1,160 @@
+{
+  "plants": {
+    "carrot": {
+      "name": "Carrot",
+      "emoji": "🥕",
+      "rarity": "Common",
+      "seedPrice": 10,
+      "baseWeight": 2.5,
+      "baseSellPrice": 3,
+      "growTime": 60,
+      "weightRandom": {
+        "min": 0.8,
+        "max": 2.5
+      }
+    },
+    "potato": {
+      "name": "Potato",
+      "emoji": "🥔",
+      "rarity": "Common",
+      "seedPrice": 25,
+      "baseWeight": 3,
+      "baseSellPrice": 10,
+      "growTime": 90,
+      "weightRandom": {
+        "min": 0.8,
+        "max": 2.5
+      }
+    },
+    "tomato": {
+      "name": "Tomato",
+      "emoji": "🍅",
+      "rarity": "Common",
+      "seedPrice": 50,
+      "baseWeight": 2.5,
+      "baseSellPrice": 25,
+      "growTime": 120,
+      "weightRandom": {
+        "min": 0.8,
+        "max": 2.5
+      }
+    },
+    "corn": {
+      "name": "Corn",
+      "emoji": "🌽",
+      "rarity": "Uncommon",
+      "seedPrice": 500,
+      "baseWeight": 4,
+      "baseSellPrice": 250,
+      "growTime": 240,
+      "weightRandom": {
+        "min": 0.8,
+        "max": 3
+      }
+    },
+    "strawberry": {
+      "name": "Strawberry",
+      "emoji": "🍓",
+      "rarity": "Rare",
+      "seedPrice": 10000,
+      "baseWeight": 2.5,
+      "baseSellPrice": 5000,
+      "growTime": 600,
+      "weightRandom": {
+        "min": 0.8,
+        "max": 4
+      }
+    },
+    "blueberry": {
+      "name": "Blueberry",
+      "emoji": "🫐",
+      "rarity": "Rare",
+      "seedPrice": 50000,
+      "baseWeight": 2.5,
+      "baseSellPrice": 25000,
+      "growTime": 900,
+      "weightRandom": {
+        "min": 0.8,
+        "max": 4
+      }
+    },
+    "sunflower": {
+      "name": "Sunflower",
+      "emoji": "🌻",
+      "rarity": "Epic",
+      "seedPrice": 1000000,
+      "baseWeight": 5,
+      "baseSellPrice": 500000,
+      "growTime": 1800,
+      "weightRandom": {
+        "min": 0.8,
+        "max": 5
+      }
+    },
+    "pineapple": {
+      "name": "Pineapple",
+      "emoji": "🍍",
+      "rarity": "Epic",
+      "seedPrice": 10000000,
+      "baseWeight": 8,
+      "baseSellPrice": 5000000,
+      "growTime": 2400,
+      "weightRandom": {
+        "min": 0.8,
+        "max": 5
+      }
+    },
+    "dragonfruit": {
+      "name": "Dragon Fruit",
+      "emoji": "🐉",
+      "rarity": "Legendary",
+      "seedPrice": 200000000,
+      "baseWeight": 5,
+      "baseSellPrice": 100000000,
+      "growTime": 3600,
+      "weightRandom": {
+        "min": 0.8,
+        "max": 8
+      }
+    },
+    "starfruit": {
+      "name": "Starfruit",
+      "emoji": "⭐",
+      "rarity": "Mythical",
+      "seedPrice": 20000000000,
+      "baseWeight": 3,
+      "baseSellPrice": 10000000000,
+      "growTime": 7200,
+      "weightRandom": {
+        "min": 0.8,
+        "max": 10
+      }
+    },
+    "moonmelon": {
+      "name": "Moon Melon",
+      "emoji": "🌙",
+      "rarity": "Divine",
+      "seedPrice": 200000000000,
+      "baseWeight": 25,
+      "baseSellPrice": 100000000000,
+      "growTime": 14400,
+      "weightRandom": {
+        "min": 0.8,
+        "max": 15
+      }
+    },
+    "celestial_pumpkin": {
+      "name": "Celestial Pumpkin",
+      "emoji": "🎃",
+      "rarity": "Celestial",
+      "seedPrice": 500000000000,
+      "baseWeight": 50,
+      "baseSellPrice": 1000000000000,
+      "growTime": 28800,
+      "weightRandom": {
+        "min": 0.8,
+        "max": 20
+      }
+    }
+  }
+}
