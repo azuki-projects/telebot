@@ -13,6 +13,7 @@ module.exports=function(db){
  app.get("/api/admins",auth,async(req,res)=>{try{res.json(await db.listAdmins())}catch(e){res.status(500).json({error:e.message})}});
  app.post("/api/admins",auth,async(req,res)=>{try{const id=await db.addAdmin(req.body.identifier);res.json({ok:true,identifier:id})}catch(e){res.status(400).json({error:e.message})}});
  app.delete("/api/admins/:identifier",auth,async(req,res)=>{try{await db.removeAdmin(decodeURIComponent(req.params.identifier));res.json({ok:true})}catch(e){res.status(400).json({error:e.message})}});
+ app.get("/",(req,res)=>res.sendFile(path.join(__dirname,"../public/index.html")));
  app.get("*",(req,res)=>res.sendFile(path.join(__dirname,"../public/index.html")));
  const port=Number(process.env.PORT||s.port||3000);app.listen(port,"0.0.0.0",()=>console.log("Admin panel listening on "+port));
 };
