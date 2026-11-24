@@ -8,7 +8,8 @@ const sprinklers={
  mythical:{name:"Mythical Sprinkler",price:10000000000,duration:3600,speed:5,weight:1}
 };
 const mutations={shiny:{name:"Shiny",emoji:"✨",multiplier:2,price:10000},golden:{name:"Golden",emoji:"🌟",multiplier:5,price:1000000},rainbow:{name:"Rainbow",emoji:"🌈",multiplier:25,price:100000000},celestial:{name:"Celestial",emoji:"💫",multiplier:1000,price:10000000000}};
-const fmt=eco.fmt,now=()=>Date.now(),MAX_SPRINKLERS=5,GROW_ALL_COST=5;\nfunction growthSeconds(v){if(typeof v==="number")return v;const a=String(v||"00:00:00").split(":").map(Number);if(a.length===3)return a[0]*3600+a[1]*60+a[2];if(a.length===4)return a[0]*86400+a[1]*3600+a[2]*60+a[3];return 0}
+const fmt=eco.fmt,now=()=>Date.now(),MAX_SPRINKLERS=5,GROW_ALL_COST=5;
+function growthSeconds(v){if(typeof v==="number")return v;const a=String(v||"00:00:00").split(":").map(Number);if(a.length===3)return a[0]*3600+a[1]*60+a[2];if(a.length===4)return a[0]*86400+a[1]*3600+a[2]*60+a[3];return 0}
 function countdown(ms){let s=Math.max(0,Math.ceil(ms/1000)),d=Math.floor(s/86400);s%=86400;let h=Math.floor(s/3600);s%=3600;let m=Math.floor(s/60),sec=s%60;return [d,h,m,sec].map(x=>String(x).padStart(2,"0")).join(":")}
 function price(v){return typeof v==="number"?v:eco.parseAmount(v)}
 function saveGarden(u){u.markModified("garden");return u.save()}
