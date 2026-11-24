@@ -11,7 +11,7 @@
         "min": 0.8,
         "max": 2.5
       },
-      "growthTime": "00:01:00"
+      "growthTime": "00:00:01:00"
     },
     "potato": {
       "name": "Potato",
@@ -24,7 +24,7 @@
         "min": 0.8,
         "max": 2.5
       },
-      "growthTime": "00:01:30"
+      "growthTime": "00:00:01:30"
     },
     "tomato": {
       "name": "Tomato",
@@ -37,7 +37,7 @@
         "min": 0.8,
         "max": 2.5
       },
-      "growthTime": "00:02:00"
+      "growthTime": "00:00:02:00"
     },
     "corn": {
       "name": "Corn",
@@ -50,7 +50,7 @@
         "min": 0.8,
         "max": 3
       },
-      "growthTime": "00:04:00"
+      "growthTime": "00:00:04:00"
     },
     "strawberry": {
       "name": "Strawberry",
@@ -63,7 +63,7 @@
         "min": 0.8,
         "max": 4
       },
-      "growthTime": "00:10:00"
+      "growthTime": "00:00:10:00"
     },
     "blueberry": {
       "name": "Blueberry",
@@ -76,7 +76,7 @@
         "min": 0.8,
         "max": 4
       },
-      "growthTime": "00:15:00"
+      "growthTime": "00:00:15:00"
     },
     "sunflower": {
       "name": "Sunflower",
@@ -89,7 +89,7 @@
         "min": 0.8,
         "max": 5
       },
-      "growthTime": "00:30:00"
+      "growthTime": "00:00:30:00"
     },
     "pineapple": {
       "name": "Pineapple",
@@ -102,7 +102,7 @@
         "min": 0.8,
         "max": 5
       },
-      "growthTime": "00:40:00"
+      "growthTime": "00:00:40:00"
     },
     "dragonfruit": {
       "name": "Dragon Fruit",
@@ -115,7 +115,7 @@
         "min": 0.8,
         "max": 8
       },
-      "growthTime": "01:00:00"
+      "growthTime": "00:01:00:00"
     },
     "starfruit": {
       "name": "Starfruit",
@@ -128,7 +128,7 @@
         "min": 0.8,
         "max": 10
       },
-      "growthTime": "02:00:00"
+      "growthTime": "00:02:00:00"
     },
     "moonmelon": {
       "name": "Moon Melon",
@@ -141,7 +141,7 @@
         "min": 0.8,
         "max": 15
       },
-      "growthTime": "04:00:00"
+      "growthTime": "00:04:00:00"
     },
     "celestial_pumpkin": {
       "name": "Celestial Pumpkin",
@@ -154,7 +154,7 @@
         "min": 0.8,
         "max": 20
       },
-      "growthTime": "08:00:00"
+      "growthTime": "00:08:00:00"
     }
   }
 }
