@@ -1,6 +1,6 @@
 const mongoose=require("mongoose"),s=require("../setting.json");
 const petSchema=new mongoose.Schema({name:String,emoji:String,level:{type:Number,default:1},xp:{type:Number,default:0},wins:{type:Number,default:0},losses:{type:Number,default:0},health:{type:Number,default:100},maxHealth:{type:Number,default:100},strength:{type:Number,default:10},shield:{type:Number,default:5},upgrades:{health:{type:Number,default:0},strength:{type:Number,default:0},shield:{type:Number,default:0}},healingUntil:Date,pendingDuel:{challenger:String,bet:Number,expiresAt:Date}},{_id:false});
-const schema=new mongoose.Schema({tgId:{type:String,unique:true},username:{type:String,lowercase:true,sparse:true},displayName:String,money:{type:Number,default:1000},lastDaily:Date,lastUsernameChange:Date,pet:petSchema,garden:{type:mongoose.Schema.Types.Mixed,default:null},banned:{type:Boolean,default:false},banReason:String},{timestamps:true});
+const schema=new mongoose.Schema({tgId:{type:String,unique:true},username:{type:String,lowercase:true,sparse:true},displayName:String,money:{type:Number,default:1000},zukecoin:{type:Number,default:0},lastDaily:Date,lastUsernameChange:Date,pet:petSchema,garden:{type:mongoose.Schema.Types.Mixed,default:null},banned:{type:Boolean,default:false},banReason:String},{timestamps:true});
 const adminSchema=new mongoose.Schema({identifier:{type:String,unique:true},addedAt:{type:Date,default:Date.now}});
 const User=mongoose.model("TelebotUser",schema),Admin=mongoose.model("TelebotAdmin",adminSchema);
 const adminCache=new Set();
