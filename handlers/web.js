@@ -2,7 +2,7 @@ const express=require("express"),path=require("path"),crypto=require("crypto"),s
 module.exports=function(db,bot){
  const app=express(),sessions=new Map(),logs=[];
  app.use(express.json({limit:"32kb"}));app.use(express.static(path.join(__dirname,"../public")));
- const panelPassword=process.env.PANEL_PASSWORD||s.panelPassword||"",loginAttempts=new Map();
+ const panelPassword=process.env.PANEL_PASSWORD||"",loginAttempts=new Map();
  function log(action,target,details=""){logs.unshift({time:new Date(),action,target:String(target||"-"),details:String(details||"").slice(0,220)});if(logs.length>250)logs.length=250}
  function passwordOK(input){const a=Buffer.from(String(input||"")),b=Buffer.from(panelPassword);return a.length===b.length&&a.length>0&&crypto.timingSafeEqual(a,b)}
  function auth(req,res,next){const token=(req.headers.authorization||"").replace(/^Bearer\s+/i,""),exp=sessions.get(token);if(!exp||exp<Date.now()){sessions.delete(token);return res.status(401).json({error:"Session expired. Please log in again."})}next()}
