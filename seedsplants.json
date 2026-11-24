@@ -7,11 +7,11 @@
       "seedPrice": 10,
       "baseWeight": 2.5,
       "baseSellPrice": 3,
-      "growTime": 60,
       "weightRandom": {
         "min": 0.8,
         "max": 2.5
-      }
+      },
+      "growthTime": "00:01:00"
     },
     "potato": {
       "name": "Potato",
@@ -20,11 +20,11 @@
       "seedPrice": 25,
       "baseWeight": 3,
       "baseSellPrice": 10,
-      "growTime": 90,
       "weightRandom": {
         "min": 0.8,
         "max": 2.5
-      }
+      },
+      "growthTime": "00:01:30"
     },
     "tomato": {
       "name": "Tomato",
@@ -33,11 +33,11 @@
       "seedPrice": 50,
       "baseWeight": 2.5,
       "baseSellPrice": 25,
-      "growTime": 120,
       "weightRandom": {
         "min": 0.8,
         "max": 2.5
-      }
+      },
+      "growthTime": "00:02:00"
     },
     "corn": {
       "name": "Corn",
@@ -46,11 +46,11 @@
       "seedPrice": 500,
       "baseWeight": 4,
       "baseSellPrice": 250,
-      "growTime": 240,
       "weightRandom": {
         "min": 0.8,
         "max": 3
-      }
+      },
+      "growthTime": "00:04:00"
     },
     "strawberry": {
       "name": "Strawberry",
@@ -59,11 +59,11 @@
       "seedPrice": 10000,
       "baseWeight": 2.5,
       "baseSellPrice": 5000,
-      "growTime": 600,
       "weightRandom": {
         "min": 0.8,
         "max": 4
-      }
+      },
+      "growthTime": "00:10:00"
     },
     "blueberry": {
       "name": "Blueberry",
@@ -72,11 +72,11 @@
       "seedPrice": 50000,
       "baseWeight": 2.5,
       "baseSellPrice": 25000,
-      "growTime": 900,
       "weightRandom": {
         "min": 0.8,
         "max": 4
-      }
+      },
+      "growthTime": "00:15:00"
     },
     "sunflower": {
       "name": "Sunflower",
@@ -85,11 +85,11 @@
       "seedPrice": 1000000,
       "baseWeight": 5,
       "baseSellPrice": 500000,
-      "growTime": 1800,
       "weightRandom": {
         "min": 0.8,
         "max": 5
-      }
+      },
+      "growthTime": "00:30:00"
     },
     "pineapple": {
       "name": "Pineapple",
@@ -98,11 +98,11 @@
       "seedPrice": 10000000,
       "baseWeight": 8,
       "baseSellPrice": 5000000,
-      "growTime": 2400,
       "weightRandom": {
         "min": 0.8,
         "max": 5
-      }
+      },
+      "growthTime": "00:40:00"
     },
     "dragonfruit": {
       "name": "Dragon Fruit",
@@ -111,11 +111,11 @@
       "seedPrice": 200000000,
       "baseWeight": 5,
       "baseSellPrice": 100000000,
-      "growTime": 3600,
       "weightRandom": {
         "min": 0.8,
         "max": 8
-      }
+      },
+      "growthTime": "01:00:00"
     },
     "starfruit": {
       "name": "Starfruit",
@@ -124,11 +124,11 @@
       "seedPrice": 20000000000,
       "baseWeight": 3,
       "baseSellPrice": 10000000000,
-      "growTime": 7200,
       "weightRandom": {
         "min": 0.8,
         "max": 10
-      }
+      },
+      "growthTime": "02:00:00"
     },
     "moonmelon": {
       "name": "Moon Melon",
@@ -137,11 +137,11 @@
       "seedPrice": 200000000000,
       "baseWeight": 25,
       "baseSellPrice": 100000000000,
-      "growTime": 14400,
       "weightRandom": {
         "min": 0.8,
         "max": 15
-      }
+      },
+      "growthTime": "04:00:00"
     },
     "celestial_pumpkin": {
       "name": "Celestial Pumpkin",
@@ -150,11 +150,11 @@
       "seedPrice": 500000000000,
       "baseWeight": 50,
       "baseSellPrice": 1000000000000,
-      "growTime": 28800,
       "weightRandom": {
         "min": 0.8,
         "max": 20
-      }
+      },
+      "growthTime": "08:00:00"
     }
   }
 }
