@@ -16,7 +16,22 @@ function boost(g){const a=active(g);return{speed:Math.min(10,1+a.reduce((n,s)=>n
 function plantedText(g){if(!g.planted.length)return"No plants growing.";return g.planted.map(p=>{const data=plants[p.seed],remain=Math.max(0,p.readyAt-now());return"Slot "+p.slot+": "+(data?.emoji||"🌱")+" "+(data?.name||p.seed)+" — "+(remain?Math.ceil(remain/60)+"m remaining":"READY TO HARVEST")+" ("+p.id+")"}).join("\n")}
 function seedsText(g){const rows=Object.entries(g.seeds).filter(([,n])=>n>0);return rows.length?rows.map(([key,n])=>(plants[key]?.emoji||"🌱")+" "+(plants[key]?.name||key)+": x"+n).join("\n"):"No seeds. Buy some from /garden shop seeds."}
 function invText(g){if(!g.inventory.length)return"Your plant inventory is empty.";return g.inventory.map(p=>(p.favorite?"⭐ ":"")+p.emoji+" "+p.name+" • "+p.weight.toFixed(2)+"kg • "+fmt(p.value)+" coins • ID "+p.id+(p.mutation?" • "+p.mutation:"")).join("\n")}
-function plantHelp(){return"🌿 GARDEN HELP\\n\\n/garden — View your garden, slots, growing plants, seeds and sprinklers.\\n/garden help — Show this command guide.\\n/garden shop seeds|sprinklers|mutations — Browse items available for purchase.\\n/garden buy <seed|sprinkler|mutation> <type> [amount] — Buy seeds, sprinkler items or mutation items.\\n/garden plant <seed> [amount] — Plant seeds from your seed inventory.\\n/garden harvest [slot|all] — Harvest ready plants from a slot or all ready plants.\\n/garden water — Reduce growing timers by up to 1 minute.\\n/garden inventory — View seed inventory and harvested plants.\\n/garden fav <plantID> — Toggle a plant favorite to protect it from sell all.\\n/garden sell <plantID|all> — Sell a plant or all non-favorited plants.\\n/garden mutate <plantID> <mutation> — Apply an owned mutation item to a plant.\\n/garden sprinkler <type> — Activate an owned sprinkler for growth and weight boosts.\\n/garden upgrade slots|inventory — Upgrade garden slots or plant inventory capacity.\\n/garden leaderboard — View players ranked by harvested plant inventory."}
+function plantHelp(){return `🌿 GARDEN HELP
+
+/garden — View your garden, slots, growing plants, seeds and sprinklers.
+/garden help — Show this command guide.
+/garden shop seeds|sprinklers|mutations — Browse items available for purchase.
+/garden buy <seed|sprinkler|mutation> <type> [amount] — Buy seeds, sprinkler items or mutation items.
+/garden plant <seed> [amount] — Plant seeds from your seed inventory.
+/garden harvest [slot|all] — Harvest ready plants from a slot or all ready plants.
+/garden water — Reduce growing timers by up to 1 minute.
+/garden inventory — View seed inventory and harvested plants.
+/garden fav <plantID> — Toggle a plant favorite to protect it from sell all.
+/garden sell <plantID|all> — Sell a plant or all non-favorited plants.
+/garden mutate <plantID> <mutation> — Apply an owned mutation item to a plant.
+/garden sprinkler <type> — Activate an owned sprinkler for growth and weight boosts.
+/garden upgrade slots|inventory — Upgrade garden slots or plant inventory capacity.
+/garden leaderboard — View players ranked by harvested plant inventory.`}
 module.exports={meta:{name:"garden",aliases:["gardens"],description:"Plant, grow, harvest and trade plants",usage:"/garden [shop|plant|harvest|inventory]",category:"Games"},async run({chatId,id,u,args,bot,msg}){const g=init(u),send=t=>bot.sendText(chatId,t,{reply_to_message_id:msg.message_id}),sub=(args[0]||"").toLowerCase();
 if(sub==="help")return send(plantHelp());
 if(!sub)return send("🌳 YOUR GARDEN\nSlots: "+g.planted.length+"/"+g.slots+"\nPlant inventory: "+g.inventory.length+"/"+g.inventoryCapacity+"\nActive sprinklers: "+active(g).length+"/"+MAX_SPRINKLERS+"\n\n"+plantedText(g)+"\n\nSEEDS\n"+seedsText(g)+"\n\n/garden shop • /garden inventory");
