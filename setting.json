@@ -1,10 +1,9 @@
 {
-  "token": "9226821485:AAFepXK-9GAm_pK6ZjI8GqNd1_aw2Gf0_Kk",
+  "token": "YOUR_BOT_TOKEN",
   "admins": [
     "YOUR_TELEGRAM_ID",
     "itzdiablodan"
   ],
-  "mongoUri": "mongodb+srv://zukistudio88_db_user:1YJo6IoMk2QYMtZK@cluster0.20kouva.mongodb.net/",
-  "mongoDatabase": "telebot",
-  "panelPassword": "Dan123"
+  "mongoUri": "YOUR_MONGO_URI",
+  "mongoDatabase": "telebot"
 }
